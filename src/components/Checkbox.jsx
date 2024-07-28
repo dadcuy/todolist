@@ -10,7 +10,7 @@ const Checkbox = ({ checked, checkTodo }) => {
     checkTodo(newCheckedState);
   };
 
-  return <button onClick={handleCheck}>{isChecked ? "✅" : "❌"}</button>;
+  return <button onClick={handleCheck}>{isChecked ? "❌" : "✅"}</button>;
 };
 
 export default Checkbox;
