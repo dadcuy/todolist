@@ -10,16 +10,22 @@ const TodoItem = ({ todo, onRemove, onCheck }) => {
   };
 
   return (
-    <div className="flex items-center justify-between bg-white md:min-w-[50vw] min-w-[90vw] border border-gray-300 px-4 py-2 rounded-md mb-2">
+    <div
+      className={`flex rounded-2xl items-center justify-between ${
+        todo.checked ? "text-content-checked" : "text-content"
+      } ${
+        todo.checked ? "bg-secondary" : "bg-primary"
+      } md:min-w-[50vw] min-w-[80vw] px-8 py-2 mb-2`}
+    >
       <div className="flex flexrow gap-1 md:gap-6">
         <Checkbox checkTodo={checkTodo} checked={todo.checked} />
         <span className={todo.checked ? "line-through" : ""}>{todo.text}</span>
       </div>
       <button
         onClick={handleRemove}
-        className="bg-gray-300 bg-opacity-65 backdrop-blur px-3 py-2 rounded-full"
+        className="text-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2"
       >
-        🗑️
+        <img src="/icons/wastebucket.png" alt="🗑️" />
       </button>
     </div>
   );
